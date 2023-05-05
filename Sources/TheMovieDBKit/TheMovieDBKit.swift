@@ -1,6 +1,9 @@
-public struct TheMovieDBKit {
-    public private(set) var text = "Hello, World!"
+@available(iOS 13.0.0, *)
+public class TheMovieDBKit {
+    
+    public var api:API
 
-    public init() {
+    public init(apiKey:String) {
+        self.api = API(apiKey: apiKey)
     }
 }
