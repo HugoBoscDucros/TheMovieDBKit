@@ -70,9 +70,13 @@ public class API {
         Task {
             do {
                 let response = try await getMovieDataFromURL(url)
-                completion(response.results)
+                DispatchQueue.main.async {
+                    completion(response.results)
+                }
             } catch {
-                completion([])
+                DispatchQueue.main.async {
+                    completion([])
+                }
             }
         }
     }
